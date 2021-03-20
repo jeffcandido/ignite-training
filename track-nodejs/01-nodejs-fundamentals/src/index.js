@@ -37,7 +37,7 @@ app.put("/courses/:id", (req, res) => {
 app.delete("/courses/:id", (req, res) => {
   const { id } = req.params;
 
-  courses.pop(courses[id]);
+  courses.splice(id, 1);
 
   res.json(courses);
 });
