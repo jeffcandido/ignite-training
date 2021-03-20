@@ -35,4 +35,12 @@ app.put("/courses/:id", (req, res) => {
   res.json(courses);
 });
 
+app.delete("/courses/:id", (req, res) => {
+  const { id } = req.params;
+
+  courses.pop(courses[id]);
+
+  res.json(courses);
+});
+
 app.listen(3333);
