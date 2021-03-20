@@ -25,4 +25,14 @@ app.post("/courses", (req, res) => {
   res.json(courses);
 });
 
+app.put("/courses/:id", (req, res) => {
+  const { id } = req.params;
+
+  courses.pop(courses[id]);
+
+  courses.push("Novo curso");
+
+  res.json(courses);
+});
+
 app.listen(3333);
