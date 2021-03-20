@@ -27,10 +27,9 @@ app.post("/courses", (req, res) => {
 
 app.put("/courses/:id", (req, res) => {
   const { id } = req.params;
+  const { new_course } = req.body;
 
-  courses.pop(courses[id]);
-
-  courses.push("Novo curso");
+  courses[id] = new_course;
 
   res.json(courses);
 });
