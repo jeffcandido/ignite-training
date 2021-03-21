@@ -7,11 +7,26 @@ app.use(express.json());
 
 const customers = [];
 
+// Midleware
+function verifyExistsAccountCPF(request, response, next) {
+  const { cpf } = request.headers;
+
+  const customer = customers.find((customer) => customer.cpf === cpf);
+
+  if (!customer) {
+    return response.status(404).json({ error: "Customer not found" });
+  }
+
+  request.customer = customer;
+
+  return next();
+}
+
 app.post("/accounts", (request, response) => {
   const { cpf, name } = request.body;
 
   const customerAlreadyExists = customers.some(
-    (customer) => customers.cpf === cpf
+    (customer) => customer.cpf === cpf
   );
 
   if (customerAlreadyExists) {
@@ -26,6 +41,12 @@ app.post("/accounts", (request, response) => {
   });
 
   return response.status(201).send();
+});
+
+app.get("/accounts", verifyExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+
+  return response.json(customer);
 });
 
 app.listen(3333);
