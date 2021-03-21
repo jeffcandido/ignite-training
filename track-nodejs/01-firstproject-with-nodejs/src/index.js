@@ -43,6 +43,12 @@ app.post("/accounts", (request, response) => {
   return response.status(201).send();
 });
 
+app.get("/statements", verifyExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+
+  return response.json(customer.statement);
+});
+
 app.get("/accounts", verifyExistsAccountCPF, (request, response) => {
   const { customer } = request;
 
