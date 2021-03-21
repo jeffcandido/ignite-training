@@ -1,0 +1,22 @@
+{
+  "name": "ignite-first-project-with-nodejs",
+  "version": "0.0.1",
+  "description": "First project with NodeJS - Ignite training.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect ./src/index.js 3333"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffcandido/ignite-training/tree/main/track-nodejs/01-firstproject-with-nodejs"
+  },
+  "author": "Jefferson Candido",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
