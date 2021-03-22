@@ -100,6 +100,15 @@ app.post("/withdrawals", verifyExistsAccountCPF, (request, response) => {
   return response.status(201).send();
 });
 
+app.put("/accounts", verifyExistsAccountCPF, (request, response) => {
+  const { name } = request.body;
+  const { customer } = request;
+
+  customer.name = name;
+
+  return response.status(201).send();
+});
+
 app.get("/accounts", verifyExistsAccountCPF, (request, response) => {
   const { customer } = request;
 
