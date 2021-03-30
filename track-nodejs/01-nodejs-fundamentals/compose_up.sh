@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail
+set -Eeuxo pipefail
 
 docker-compose build
 
