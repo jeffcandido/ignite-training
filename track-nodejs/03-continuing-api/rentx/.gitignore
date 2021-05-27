@@ -1,6 +1,5 @@
 /node_modules
 /dist
-**/.vscode
 **/.env
 .yarn/*
 !.yarn/releases
@@ -8,3 +7,4 @@
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+/tmp
