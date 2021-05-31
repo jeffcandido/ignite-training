@@ -1,11 +1,11 @@
 version: '3.4'
 
 services:
-  api:
-    image: api
+  dev:
+    image: rentx-dev
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./docker/dev/Dockerfile
     environment:
       NODE_ENV: development
     ports:
@@ -15,9 +15,9 @@ services:
       - $PWD:/home/user/app
     working_dir: /home/user/app
     networks:
-      - private_network
+      - dev_network
 networks:
-  private_network:
+  dev_network:
     driver: bridge
     ipam:
       driver: default
