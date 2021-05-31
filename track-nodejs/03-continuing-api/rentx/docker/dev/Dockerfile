@@ -1,5 +1,4 @@
 FROM node:14.16.0-alpine
-ENV NODE_ENV=development
 WORKDIR /home/user/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN apk add --no-cache --virtual native-deps \
