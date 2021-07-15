@@ -15,6 +15,22 @@ services:
     working_dir: /home/user/app
     networks:
       - dev_network
+    depends_on:
+      - pg
+  pg:
+    image: postgres:13.3-alpine
+    container_name: pg_ignite
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=superuser
+      - POSTGRES_PASSWORD=mastersecret
+      - POSTGRES_DB=rentx
+    volumes:
+      - /var/run/docker-pg/$PWD:/var/lib/postgresql/data
+    networks:
+      - dev_network
 networks:
   dev_network:
     driver: bridge
