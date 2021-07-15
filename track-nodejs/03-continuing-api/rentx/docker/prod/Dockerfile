@@ -26,7 +26,7 @@ WORKDIR /usr/src/rentx
 COPY --from=build /usr/src/rentx /usr/src/rentx
 RUN npm ci --only=production
 
-RUN npm install --quiet pm2 -g
+RUN npm install --quiet pm2@5.0.4 -g
 
 RUN chown -R node:node /usr/src/rentx
 
