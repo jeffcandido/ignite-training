@@ -1,6 +1,6 @@
 {
   "name": "ignite-rentx-starting-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Starting RentX API - Ignite Training.",
   "main": "src/server.ts",
   "scripts": {
