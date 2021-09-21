@@ -1,0 +1,26 @@
+{
+  "name": "github-explorer",
+  "version": "0.0.1",
+  "description": "Frontend para consumo da API do Github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffcandido/ignite-training.git"
+  },
+  "keywords": [
+    "frontend"
+  ],
+  "author": "Jefferson Candido",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffcandido/ignite-training/issues"
+  },
+  "homepage": "https://github.com/jeffcandido/ignite-training#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
